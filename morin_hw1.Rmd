@@ -1,0 +1,43 @@
+---
+title: "Stat 6550 - Homework 1"
+author: "Blain Morin"
+date: "1/26/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## 1. Consider a monthly time series of the number of births in New York City per 1,000 in the populationstarting in 1948 (Data is taken from Newton, 1988). Summarize the features that you observe in the time series plot.
+
+![](series.PNG){width=75%}
+
+
+* There appears to be some dependence or correlation between the points because points that are close to eachother seem more similar than points that are distant.
+* There seems to be a positive upward trend because the average births seem lower at the beginning of the series and it seems to be increasing. 
+* I think there is some visual evidence of seasonality because there is a periodic pattern: the births look like they have a peak during the middle of a year.
+
+## 2. (Brockwell and Davis 1.1) Let $X$ and $Y$ be two random variables with $E[Y] = \mu$ and $E[Y]^2 < \infty$.
+
+### a. Show that the constant $c$ that minimizes $E[Y - c]^2$ is $c = \mu$.
+
+To start:
+
+$$  E[Y-c]^2 = (E[Y] - E[c])^2 = E[Y]^2 - 2E[Y]E[c] + E[c]^2 = E[Y]^2 - 2cE[Y] + c^2$$
+
+To minimize, I set the derivative with respect to $c$ equal to $0$:
+
+$$  -2E[Y] + 2c = 0 $$
+Therefore:
+
+$$ c = E[Y] = \mu $$
+The second derivative with respect to $c$ is $2$ which is $> 0$, thus we know it is a minimum. 
+
+### b. Deduce that the random variable $f(X)$ that minimizes $E[(Y - f(X))^2 | X]$ is $f(X) = E[Y|X]$.
+
+### c. Deduce that the random variable $f(X)$ that minimizes $E[Y - f(X)]^2$ is also $f(X) = E[Y|X]$.
+
+## 3. (Brockwell and Davis 1.4) Let ${Z_t}} be a sequence of independent normal random variables, each with mean $0$ and variance $\sigma^2$, and let $a$, $b$, and $c$ be constants. Which, if any, of the following processes are stationary? For each *stationary* process, specify the mean and autocovariance function. 
+
+### a. $X_t = a + bZ_t + cZ_{t-2}$
